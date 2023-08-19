@@ -1,7 +1,25 @@
+import dataVideo from "../../assets/data/video";
+
 const Video = () => {
     return (
-        <div>
-            <h1>Halaman Galeri Video</h1>
+        <div className="container">
+            {dataVideo.map((item) => {
+                return (
+                    <section
+                        key={item.link}
+                        className="container d-flex justify-content-center"
+                        data-aos="fade-up">
+                        <iframe
+                            width="800"
+                            height="500"
+                            src={item.link}
+                            title="YouTube video Profil SD NEGERI 1 BANYUROTO"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen></iframe>
+                    </section>
+                );
+            })}
         </div>
     );
 };

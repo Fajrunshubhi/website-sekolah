@@ -7,7 +7,7 @@ const CardFoto = ({ foto, title, deskripsi }) => {
         setIsClick(!isClick);
     };
     return (
-        <div className="col-lg-4 col-md-6 mt-4 mt-md-0">
+        <div className="col-lg-4 col-md-6 mt-4 mt-md-0 mb-4">
             <div className="card-foto" onClick={cardClick}>
                 <img className="img-sekolah" src={foto} alt="Foto Sekolah" />
                 <div className={`intro ${isClick ? "intro-click" : ""}`}>
