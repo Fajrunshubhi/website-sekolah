@@ -1639,3 +1639,60 @@ section {
 .text-title-berita {
     color: #0d1282;
 }
+.card-foto {
+    height: 350px;
+    margin: 50;
+    box-shadow: 5px 5px 10px;
+    overflow: hidden;
+    position: relative;
+}
+.card-foto img {
+    height: 350px;
+    width: 100%;
+    border-radius: 3px;
+    transition: 1s;
+}
+.intro {
+    height: 70px;
+    padding: 6px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(27, 27, 27, 0.5);
+    color: white;
+    transition: 1s;
+}
+.intro h1 {
+    margin: 10px;
+    font-size: 40px;
+}
+.intro p {
+    font-size: 16px;
+    margin: 16px;
+    visibility: hidden;
+    opacity: 0;
+}
+.card-foto:hover {
+    cursor: pointer;
+}
+.card-foto:hover .intro {
+    height: 200px;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.card-foto:hover p {
+    opacity: 1;
+    visibility: visible;
+}
+.card-foto:hover img {
+    transform: scale(1.1);
+}
+.intro-click {
+    height: 200px;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.p-click {
+    opacity: 1 !important;
+    visibility: visible !important;
+}

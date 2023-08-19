@@ -9,11 +9,14 @@ const CardEkskul = ({ foto, title, deskripsiLengkap }) => {
     return (
         <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-5">
             <div className="card card-eks rounded-3 shadow-sm border-0">
-                <img
-                    src={foto}
-                    className="card-img-top"
-                    alt="Gambar Ekstrakurikuler"
-                />
+                <a className="img-card" href="">
+                    <img
+                        src={foto}
+                        className="card-img-top"
+                        alt="Gambar Ekstrakurikuler"
+                    />
+                </a>
+
                 <div className="card-body">
                     <h5 className="card-title fw-bold text-uppercase">
                         {title}

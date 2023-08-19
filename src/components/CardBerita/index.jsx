@@ -5,7 +5,9 @@ const CardBerita = ({ foto, jenis, title, deskripsi }) => {
     return (
         <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div className="berita-item mt-4">
-                <img src={foto} className="img-fluid" alt="..." />
+                <a className="img-card" href="">
+                    <img src={foto} className="img-fluid" alt="..." />
+                </a>
                 <div className="berita-content">
                     <div className="d-flex justify-content-between align-items-center mb-3">
                         <h4>{jenis}</h4>

@@ -2,7 +2,7 @@ import { course1, course2, course3 } from "../img";
 
 const dataBerita = [
     {
-        foto: course1,
+        foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdZuTtjqGPv2TDeOS2E977CDgIoxQ2R5tTpQ&usqp=CAU",
         jenis: "Berita",
         title: "Lomba 17an",
         deskripsi:

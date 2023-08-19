@@ -10,9 +10,7 @@ const CardPrestasi = ({ foto, title, deskripsi }) => {
     return (
         <div className="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch ">
             <div className="card card-prestasi rounded-5 shadow">
-                <a
-                    className="img-card"
-                    href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                <a className="img-card" href="">
                     <img src={foto} />
                 </a>
                 <div className="card-content">

@@ -2,7 +2,7 @@ import { course3 } from "../img";
 
 const dataPrestasi = [
     {
-        foto: course3,
+        foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdZuTtjqGPv2TDeOS2E977CDgIoxQ2R5tTpQ&usqp=CAU",
         title: "Juara lomba Matematika",
         deskripsi:
             "Menjuarai lomba di Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi id eligendi eaque aliquam explicabo inventore mollitia, perspiciatis itaque! Ullam assumenda mollitia maiores dolorem sapiente? Fuga dicta nihil minus culpa magnam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure recusandae et laborum voluptas dicta sed soluta reprehenderit voluptatum debitis, ipsum illum blanditiis animi eum aliquam iste, ducimus nihil nesciunt officiis?",

@@ -1,7 +1,8 @@
 import { course1 } from "../img";
 const dataEkstrakurikuler = [
     {
-        foto: course1,
+        foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdZuTtjqGPv2TDeOS2E977CDgIoxQ2R5tTpQ&usqp=CAU",
+        title: "Juara lomba Matematika",
         nama: "Pramuka (Wajib)",
         deskripsiLengkap:
             "Pramuka, singkatan dari 'Praja Muda Karana', adalah gerakan kepramukaan yang bertujuan untuk membentuk kepribadian yang kuat, bertanggung jawab, dan peduli terhadap masyarakat serta lingkungan. Pramuka merupakan organisasi yang melibatkan anak-anak dan remaja dalam serangkaian kegiatan pendidikan nonformal yang mencakup beragam keterampilan, pengetahuan, dan nilai-nilai positif. Tujuan utamanya adalah mengembangkan jiwa kepemimpinan, semangat kerja sama, kecakapan bertahan di alam, dan penghargaan terhadap nilai-nilai sosial. Dalam kegiatan Pramuka, anggota disebut dengan istilah 'Pramuka' belajar melalui berbagai macam kegiatan seperti berkemah, mendirikan tenda, memasak di alam terbuka, merawat lingkungan, serta mengenal dan menghargai keanekaragaman budaya dan alam. Organisasi ini juga mengajarkan etika, disiplin, tanggung jawab, serta pengembangan diri secara holistik melalui sistem pembagian golongan seperti Penggalang, Penegak, dan Pandega. Pramuka juga memiliki semboyan 'Siap Sedia' dan salam Pramuka, yaitu 'Salam Pramuka', yang merupakan ciri khas pengenal anggota Pramuka di seluruh dunia. Organisasi ini berusaha untuk menciptakan individu yang memiliki nilai-nilai kejujuran, gotong royong, dan ketangguhan, serta siap berkontribusi positif dalam masyarakat dan dunia.Di berbagai negara, Pramuka memiliki varian nama dan struktur yang mungkin sedikit berbeda, tetapi pada dasarnya, Pramuka memiliki visi yang sama: membentuk generasi muda yang unggul dan berbudi pekerti luhur.",
