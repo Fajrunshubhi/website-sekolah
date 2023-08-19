@@ -1,5 +1,6 @@
 import { trainer1 } from "../../assets/img";
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 
 const CardBerita = ({ foto, jenis, title, deskripsi }) => {
     return (
@@ -13,11 +14,9 @@ const CardBerita = ({ foto, jenis, title, deskripsi }) => {
                         <h4>{jenis}</h4>
                     </div>
                     <h3>
-                        <a
-                            className="text-title-berita"
-                            href="berita-details.html">
+                        <NavLink className="text-title-berita" to={title}>
                             {title}
-                        </a>
+                        </NavLink>
                     </h3>
                     <p className="card-text-berita">{deskripsi}</p>
                     <div className="trainer d-flex justify-content-between align-items-center">

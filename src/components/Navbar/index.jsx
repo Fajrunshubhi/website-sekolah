@@ -258,7 +258,7 @@ const Navbar = () => {
                                     isActive ? styles.active : undefined
                                 }
                                 aria-current="page"
-                                to="/berita"
+                                to="/berita-artikel"
                                 end>
                                 Berita & Artikel
                             </NavLink>

@@ -26,13 +26,15 @@ const dataBerita = [
         foto: course3,
         jenis: "Berita",
         title: "Lomba 17an",
-        deskripsi: "ini adalah deskripsi tentang berita lomba 17an",
+        deskripsi:
+            " ini adalah deskripsi tentang berita lomba 17an ini adalah deskripsi tentang berita lomba 17anini adalah deskripsi tentang berita lomba 17an",
     },
     {
         foto: course3,
         jenis: "Berita",
         title: "Lomba 17an",
-        deskripsi: "ini adalah deskripsi tentang berita lomba 17an",
+        deskripsi:
+            "ini adalah deskripsi tentang berita lomba 17anini adalah deskripsi tentang berita lomba 17an ini adalah deskripsi tentang berita lomba 17an",
     },
 ];
 

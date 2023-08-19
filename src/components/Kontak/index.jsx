@@ -10,7 +10,7 @@ const Kontak = () => {
                             height: "350px",
                         }}
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.932541025035!2d110.39165297500179!3d-7.472701992539024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a63311281badb%3A0x384db3ec7925203d!2sSD%20Negeri%20Banyuroto%201!5e0!3m2!1sid!2sid!4v1692348100205!5m2!1sid!2sid"
-                        allowfullscreen
+                        allowFullScreen
                         referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 

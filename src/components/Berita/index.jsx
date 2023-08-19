@@ -13,6 +13,7 @@ const BeritaComponent = ({ berita }) => {
                     title1="Berita & Artikel Sekolah"
                     total={totalBerita}
                     lihatsemua="Lihat semua berita & artikel"
+                    to="berita-artikel"
                 />
 
                 <div className="row" data-aos="zoom-in" data-aos-delay="100">

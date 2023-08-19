@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight as Arrow } from "react-icons/ai";
 import PropTypes from "prop-types";
 
-const HeaderSection = ({ title, title1, total, lihatsemua }) => {
+const HeaderSection = ({ title, title1, total, lihatsemua, to }) => {
     return (
         <div
             className="section-title-header d-flex flex-row justify-content-between align-items-center pb-3"
@@ -12,7 +12,7 @@ const HeaderSection = ({ title, title1, total, lihatsemua }) => {
             </div>
             {total !== null && (
                 <div className="section-lihat-semua">
-                    <a className="btn-lihat-semua" href="/ekstrakurikuler">
+                    <a className="btn-lihat-semua" href={`/${to}`}>
                         {lihatsemua} <Arrow />
                     </a>
                 </div>

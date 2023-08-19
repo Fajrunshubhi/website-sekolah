@@ -13,6 +13,7 @@ const EkstrakurikulerComponent = ({ eksk }) => {
                     title1="Ekstrakurikuler Sekolah"
                     total={totaleks}
                     lihatsemua="Lihat semua ekstrakurikuler"
+                    to="ekstrakurikuler"
                 />
                 <div className="row" data-aos="zoom-in" data-aos-delay="100">
                     {totaleks !== null

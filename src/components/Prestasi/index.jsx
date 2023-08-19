@@ -12,6 +12,7 @@ const PrestasiComponent = ({ prestasi }) => {
                     title1="Prestasi Sekolah"
                     total={totalPrestasi}
                     lihatsemua="Lihat semua prestasi"
+                    to="prestasi"
                 />
 
                 <div className="row" data-aos="zoom-in" data-aos-delay="100">

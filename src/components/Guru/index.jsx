@@ -12,6 +12,7 @@ const GuruComponent = ({ guru }) => {
                     title1="Guru Sekolah"
                     total={totalGuru}
                     lihatsemua="Lihat semua guru"
+                    to="guru"
                 />
 
                 <div className="row" data-aos="zoom-in" data-aos-delay="100">

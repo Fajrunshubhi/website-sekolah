@@ -11,8 +11,9 @@ import Prestasi from "../pages/Prestasi";
 import Ekstrakurikuler from "../pages/Ekstrakurikuler";
 
 import Foto from "../pages/galeri/Foto";
-import Video from "../pages/galeri/Video";
+import Video from "../pages/Galeri/Video";
 import Tentang from "../pages/Tentang";
+import BeritaDetail from "../pages/BeritaDetail";
 
 const Router = () => {
     const router = createBrowserRouter([
@@ -48,8 +49,12 @@ const Router = () => {
                     element: <Tentang />,
                 },
                 {
-                    path: "berita",
+                    path: "berita-artikel",
                     element: <Berita />,
+                },
+                {
+                    path: "berita/:beritaId",
+                    element: <BeritaDetail />,
                 },
                 {
                     path: "agenda",
