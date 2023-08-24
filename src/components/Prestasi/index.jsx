@@ -1,8 +1,7 @@
-import dataPrestasi from "../../assets/data/prestasi";
 import PropTypes from "prop-types";
 import CardPrestasi from "../CardPrestasi";
 import HeaderSection from "../HeaderSection";
-const PrestasiComponent = ({ prestasi }) => {
+const PrestasiComponent = ({ prestasi, dataPrestasi }) => {
     const totalPrestasi = prestasi;
     return (
         <section id="trainers" className="trainers">
@@ -21,21 +20,20 @@ const PrestasiComponent = ({ prestasi }) => {
                               if (index < 4) {
                                   return (
                                       <CardPrestasi
-                                          key={item.title}
-                                          foto={item.foto}
-                                          title={item.title}
+                                          key={item._id}
+                                          title={item.judul}
+                                          foto={item.imageUrl}
                                           deskripsi={item.deskripsi}
                                       />
                                   );
                               }
                           })
                         : dataPrestasi.map((item) => {
-                              console.log(item.deskripsi);
                               return (
                                   <CardPrestasi
-                                      key={item.title}
-                                      foto={item.foto}
-                                      title={item.title}
+                                      key={item._id}
+                                      title={item.judul}
+                                      foto={item.imageUrl}
                                       deskripsi={item.deskripsi}
                                   />
                               );
@@ -48,6 +46,7 @@ const PrestasiComponent = ({ prestasi }) => {
 
 PrestasiComponent.propTypes = {
     prestasi: PropTypes.any,
+    dataPrestasi: PropTypes.array,
 };
 
 export default PrestasiComponent;

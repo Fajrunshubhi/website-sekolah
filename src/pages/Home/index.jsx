@@ -11,8 +11,33 @@ import EkstrakurikulerComponent from "../../components/Ekskul";
 import BeritaComponent from "../../components/Berita";
 import PrestasiComponent from "../../components/Prestasi";
 import AgendaComponent from "../../components/Agenda";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { API_HOST } from "../../utils/API/api";
 
 const Home = () => {
+    const [berita, setBerita] = useState([]);
+    const [agenda, setAgenda] = useState([]);
+    const [prestasi, setPrestasi] = useState([]);
+    const [isReadMore, setIsReadMore] = useState(true);
+    const toggleReadMore = () => {
+        setIsReadMore(!isReadMore);
+    };
+    const deskripsiSekolah =
+        "Selamat datang di halaman profil SDN Banyuroto 1. Sejak berdiri pada tahun 1961, kami telah menjalankan komitmen kami untuk memberikan pendidikan unggul kepada para generasi penerus. Dengan bangga kami menyambut siswa-siswi yang bersemangat serta guru, staf, dan karyawan yang berdedikasi. Kami mengundang Anda untuk menjelajahi lebih lanjut tentang SDN Banyuroto 1, tempat di mana pembelajaran dan pengembangan diri berkolaborasi dalam harmoni. <br/><br/> SDN Banyuroto 1 telah tumbuh menjadi 11 rombongan belajar yang siap mewujudkan potensi anak-anak. Kami mengajarkan nilai-nilai luhur melalui pembiasaan seperti hafalan surat-surat pendek, doa-doa harian, dzikir pagi, dan materi dasar kepramukaan serta gerakan PBB pada apel pagi. Di dalam kelas, kami merawat semangat nasionalisme dengan menyanyikan lagu-lagu nasional dan daerah, serta melafalkan Asmaul Husna bersama-sama. <br/><br/> Setiap Jumat, anak-anak kami mengambil bagian dalam infaq setelah kegiatan senam bersama, menumbuhkan jiwa sosial dan kepedulian. Kami juga melibatkan mereka dalam Jumat Bersih, di mana mereka aktif membersihkan lingkungan sekolah untuk menumbuhkan kesadaran ekologis sejak dini. <br/><br/> SDN Banyuroto 1 adalah staf pelaksana Program Organisasi Sekolah Penggerak di bawah naungan Yayasan Ircos Indonesia, menunjukkan komitmen kami terhadap pendidikan holistik. Selain itu, kami juga bangga telah merintis perjalanan menjadi sekolah adiwiyata, mendorong kesadaran lingkungan di kalangan siswa dan lingkungan sekitar. Terima kasih atas kunjungan Anda, dan mari bersama kami membangun masa depan yang cerah bagi generasi penerus! <br/><br/> Di SDN Banyuroto 1, kami menawarkan beragam ekstrakurikuler yang berfokus pada pengembangan potensi siswa. Ekstrakurikuler wajib Pramuka membentuk karakter dan kemandirian, sementara pilihan lainnya seperti Seni Karawitan, Olahraga, Tilawah, dan Komputer memberikan kesempatan kepada siswa untuk mengeksplor bakat dan minat mereka. <br/><br/> Lingkungan belajar kami mencakup 12 ruang kelas yang nyaman, ruang guru untuk kolaborasi, serta ruang Kepala Sekolah untuk diskusi dan pengambilan keputusan. Perpustakaan kami melengkapi pengetahuan siswa, sedangkan gazebo dan lapangan olahraga menjadi tempat yang ideal untuk beraktivitas fisik dan rekreasi. <br/><br/> Kami juga mengutamakan kesehatan siswa dengan menyediakan ruang UKS yang siap memberikan perawatan dan layanan kesehatan. Fasilitas toilet siswa sebanyak 9 dan toilet guru sebanyak 2 menjamin kenyamanan dan kebersihan. Sementara itu, dapur kami memastikan penyediaan makanan yang sehat dan bermutu. <br/><br/> Di samping itu, SDN Banyuroto 1 juga memiliki tempat parkir yang aman, mushola untuk kegiatan religius, dan ruang kesenian untuk menggali kreativitas siswa. Semua ini kami lakukan untuk menciptakan lingkungan belajar yang holistik dan inspiratif bagi perkembangan siswa secara menyeluruh.";
+
+    useEffect(() => {
+        axios
+            .get(`${API_HOST.url}/landing-page`)
+            .then((response) => {
+                setBerita(response.data.berita);
+                setAgenda(response.data.agenda);
+                setPrestasi(response.data.prestasi);
+            })
+            .catch((error) => {
+                console.error("Error fetching prestasi:", error);
+            });
+    }, []);
     return (
         <>
             <section
@@ -23,17 +48,15 @@ const Home = () => {
                     data-aos="zoom-in"
                     data-aos-delay="100">
                     <h1>
-                        Learning Today,
+                        Selamat Datang di
                         <br />
-                        Leading Tomorrow
+                        SD NEGERI BANYUROTO 1
                     </h1>
                     <h2>
-                        We are team of talented designers making websites with
-                        Bootstrap
+                        BERIMAN DAN BERTAQWA, AKTIF, KREATIF, BERINTEGRITAS,
+                        BERWAWASAN LUAS, PEDULI TERHADAP LINGKUNGAN DAN UNGGUL
+                        DALAM PRESTASI AKADEMIK DAN NON AKADEMIK
                     </h2>
-                    <a href="courses.html" className="btn-get-started">
-                        Get Started
-                    </a>
                 </div>
             </section>
 
@@ -110,28 +133,36 @@ const Home = () => {
                         <div className="row">
                             <div className="col-lg-4 d-flex align-items-stretch">
                                 <div className="content">
-                                    <h3>Kenapa SD Negeri Banyuroto 1?</h3>
-                                    <p>
-                                        Selamat datang di halaman profil SDN
-                                        Banyuroto 1. Sejak berdiri pada tahun
-                                        1961, kami telah menjalankan komitmen
-                                        kami untuk memberikan pendidikan unggul
-                                        kepada para generasi penerus. Dengan
-                                        bangga kami menyambut siswa-siswi yang
-                                        bersemangat serta guru, staf, dan
-                                        karyawan yang berdedikasi. Kami
-                                        mengundang Anda untuk menjelajahi lebih
-                                        lanjut tentang SDN Banyuroto 1, tempat
-                                        di mana pembelajaran dan pengembangan
-                                        diri berkolaborasi dalam harmoni.
-                                    </p>
-                                    <div className="text-center">
-                                        <a href="/tentang" className="more-btn">
-                                            Selanjutnya
-                                            <i className="ms-3">
-                                                <Arrow />
-                                            </i>
-                                        </a>
+                                    <h3> Website SD Negeri Banyuroto 1</h3>
+                                    {isReadMore ? (
+                                        <div
+                                            dangerouslySetInnerHTML={{
+                                                __html: deskripsiSekolah.slice(
+                                                    0,
+                                                    450
+                                                ),
+                                            }}></div>
+                                    ) : (
+                                        <div
+                                            dangerouslySetInnerHTML={{
+                                                __html: deskripsiSekolah,
+                                            }}></div>
+                                    )}
+                                    <div
+                                        onClick={toggleReadMore}
+                                        className="read-or-hide ms-2  text-center">
+                                        {isReadMore ? (
+                                            <span className="more-btn">
+                                                Selanjutnya
+                                                <i className="ms-3">
+                                                    <Arrow />
+                                                </i>
+                                            </span>
+                                        ) : (
+                                            <span className="more-btn">
+                                                Sembunyikan
+                                            </span>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -388,11 +419,11 @@ const Home = () => {
                 </section>
 
                 <EkstrakurikulerComponent eksk={1} />
-                <PrestasiComponent prestasi={1} />
+                <PrestasiComponent dataPrestasi={prestasi} prestasi={1} />
 
-                <BeritaComponent berita={3} />
+                <BeritaComponent dataBerita={berita} berita={3} />
                 <GuruComponent guru={4} />
-                <AgendaComponent agenda={3} />
+                <AgendaComponent dataAgenda={agenda} agenda={3} />
             </main>
         </>
     );

@@ -1,4 +1,4 @@
-import { about } from "../../assets/img";
+import { guru_karyawan } from "../../assets/img";
 const VisiMisiComponent = () => {
     return (
         <section id="about" className="about">
@@ -8,7 +8,7 @@ const VisiMisiComponent = () => {
                         className="col-lg-6 order-1 order-lg-2"
                         data-aos="fade-left"
                         data-aos-delay="100">
-                        <img src={about} className="img-fluid" alt="" />
+                        <img src={guru_karyawan} className="img-fluid" alt="" />
                     </div>
                     <div className="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                         <h3 className="fw-bold">Visi Sekolah</h3>

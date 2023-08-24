@@ -1,27 +1,41 @@
-import { trainer1 } from "../../assets/img";
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { HOST } from "../../utils/API/api";
 
-const CardBerita = ({ foto, jenis, title, deskripsi }) => {
+const CardBerita = ({ id, foto, jenis, title, deskripsi }) => {
+    const location = useLocation();
+    const isNavActive = location.pathname === `/berita-artikel`;
+    console.log(isNavActive);
     return (
         <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div className="berita-item mt-4">
-                <a className="img-card" href="">
-                    <img src={foto} className="img-fluid" alt="..." />
+            <div className="berita-item mt-4 w-100">
+                <a
+                    className="img-card"
+                    href={
+                        isNavActive
+                            ? `berita-artikel/${id}`
+                            : `berita-artikel/${id}`
+                    }>
+                    <img
+                        src={`${HOST.url}/${foto}`}
+                        className="img-fluid"
+                        alt="Gambar Berita dan Artikel Sekolah"
+                    />
                 </a>
                 <div className="berita-content">
                     <div className="d-flex justify-content-between align-items-center mb-3">
                         <h4>{jenis}</h4>
                     </div>
                     <h3>
-                        <NavLink className="text-title-berita" to={title}>
+                        <NavLink
+                            className="text-title-berita"
+                            to={isNavActive ? id : `berita-artikel/${id}`}>
                             {title}
                         </NavLink>
                     </h3>
                     <p className="card-text-berita">{deskripsi}</p>
                     <div className="trainer d-flex justify-content-between align-items-center">
                         <div className="trainer-profile d-flex align-items-center">
-                            <img src={trainer1} className="img-fluid" alt="" />
                             <span>Admin SDN BANYUROTO 1</span>
                         </div>
                     </div>
@@ -33,6 +47,7 @@ const CardBerita = ({ foto, jenis, title, deskripsi }) => {
 
 CardBerita.propTypes = {
     foto: PropTypes.any,
+    id: PropTypes.any,
     jenis: PropTypes.string,
     title: PropTypes.string,
     deskripsi: PropTypes.string,

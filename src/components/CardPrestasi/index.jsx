@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { HOST } from "../../utils/API/api";
 
 const CardPrestasi = ({ foto, title, deskripsi }) => {
     const [isReadMore, setIsReadMore] = useState(true);
@@ -9,9 +10,9 @@ const CardPrestasi = ({ foto, title, deskripsi }) => {
 
     return (
         <div className="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch ">
-            <div className="card card-prestasi rounded-5 shadow">
-                <a className="img-card" href="">
-                    <img src={foto} />
+            <div className="card card-prestasi rounded-5 shadow w-100">
+                <a className="img-card">
+                    <img src={`${HOST.url}/${foto}`} />
                 </a>
                 <div className="card-content">
                     <h4 className="card-title">

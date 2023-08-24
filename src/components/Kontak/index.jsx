@@ -1,3 +1,5 @@
+import { MdEmail as Email } from "react-icons/md";
+
 const Kontak = () => {
     return (
         <main id="main">
@@ -19,7 +21,7 @@ const Kontak = () => {
                         <div className="col-lg-4">
                             <div className="info">
                                 <div className="address">
-                                    <i className="bi bi-geo-alt"></i>
+                                    <i className="icon-kontak bi bi-geo-alt"></i>
                                     <h4>Lokasi:</h4>
                                     <p>
                                         Dusun Garon <br />
@@ -31,7 +33,7 @@ const Kontak = () => {
 
                                 <div className="email">
                                     <a href="mailto:banyurotosiji@gmail.com">
-                                        <i className="bi bi-envelope"></i>
+                                        <i className="icon-kontak bi bi-envelope"></i>
                                         <h4>Email:</h4>
                                         <p>banyurotosiji@gmail.com</p>
                                     </a>
@@ -42,7 +44,7 @@ const Kontak = () => {
                                         href="https://wa.me/+6281328772265"
                                         target="_blank"
                                         rel="noreferrer">
-                                        <i className="bi bi-phone"></i>
+                                        <i className="icon-kontak bi bi-phone"></i>
                                         <h4>Nomor HP:</h4>
                                         <p>+62 81328772265</p>
                                     </a>
@@ -51,11 +53,7 @@ const Kontak = () => {
                         </div>
 
                         <div className="col-lg-8 mt-5 mt-lg-0">
-                            <form
-                                action="forms/contact.php"
-                                method="post"
-                                role="form"
-                                className="php-email-form">
+                            <form className="php-email-form">
                                 <div className="row">
                                     <div className="col-md-6 form-group">
                                         <input
@@ -104,7 +102,12 @@ const Kontak = () => {
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <button type="submit">Send Message</button>
+                                    <a
+                                        className="me-4 text-bg-primary ps-4 pe-4 pt-2 pb-2 rounded-5"
+                                        href="mailto:banyurotosiji@gmail.com">
+                                        <Email />
+                                        Kirim Pesan
+                                    </a>
                                 </div>
                             </form>
                         </div>

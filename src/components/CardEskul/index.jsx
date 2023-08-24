@@ -9,7 +9,7 @@ const CardEkskul = ({ foto, title, deskripsiLengkap }) => {
     return (
         <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-5">
             <div className="card card-eks rounded-3 shadow-sm border-0">
-                <a className="img-card" href="">
+                <a className="img-card">
                     <img
                         src={foto}
                         className="card-img-top"

@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
-import dataBerita from "../../assets/data/berita";
 import { AiOutlineArrowRight as Arrow } from "react-icons/ai";
 import CardAgenda from "../CardAgenda";
+import format from "date-fns/format/index.js";
+import idLocale from "date-fns/locale/id/index.js";
 
-const AgendaComponent = ({ agenda }) => {
+const AgendaComponent = ({ agenda, dataAgenda }) => {
     const totalAgenda = agenda;
     return (
         <section id="popular-beritas" className="beritas">
@@ -25,27 +26,43 @@ const AgendaComponent = ({ agenda }) => {
 
                 <div className="row" data-aos="zoom-in" data-aos-delay="100">
                     {totalAgenda !== null
-                        ? dataBerita.map((item, index) => {
+                        ? dataAgenda.map((item, index) => {
+                              const jadwal = format(
+                                  new Date(item.jadwal),
+                                  "dd MMMM yyyy, HH:mm",
+                                  {
+                                      locale: idLocale,
+                                  }
+                              );
                               if (index < 3) {
                                   return (
                                       <CardAgenda
-                                          key={item.title}
-                                          foto={item.foto}
-                                          jenis={item.jenis}
-                                          title={item.title}
+                                          key={item._id}
+                                          id={item._id}
+                                          judul={item.judul}
                                           deskripsi={item.deskripsi}
+                                          jadwal={jadwal}
+                                          foto={item.imageUrl}
                                       />
                                   );
                               }
                           })
-                        : dataBerita.map((item) => {
+                        : dataAgenda.map((item) => {
+                              const jadwal = format(
+                                  new Date(item.jadwal),
+                                  "dd MMMM yyyy, HH:mm",
+                                  {
+                                      locale: idLocale,
+                                  }
+                              );
                               return (
                                   <CardAgenda
-                                      key={item.title}
-                                      foto={item.foto}
-                                      jenis={item.jenis}
-                                      title={item.title}
+                                      key={item._id}
+                                      id={item._id}
+                                      judul={item.judul}
                                       deskripsi={item.deskripsi}
+                                      jadwal={jadwal}
+                                      foto={item.imageUrl}
                                   />
                               );
                           })}
@@ -56,6 +73,7 @@ const AgendaComponent = ({ agenda }) => {
 };
 AgendaComponent.propTypes = {
     agenda: PropTypes.any,
+    dataAgenda: PropTypes.array,
 };
 
 export default AgendaComponent;

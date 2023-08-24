@@ -1,6 +1,20 @@
 import AgendaComponent from "../../components/Agenda";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { API_HOST } from "../../utils/API/api";
 
 const Agenda = () => {
+    const [agenda, setagenda] = useState([]);
+    useEffect(() => {
+        axios
+            .get(`${API_HOST.url}/agenda`)
+            .then((response) => {
+                setagenda(response.data.agenda);
+            })
+            .catch((error) => {
+                console.error("Error fetching agenda:", error);
+            });
+    }, []);
     return (
         <>
             <main id="main" data-aos="fade-in">
@@ -20,7 +34,7 @@ const Agenda = () => {
                         </p>
                     </div>
                 </div>
-                <AgendaComponent agenda={null} />
+                <AgendaComponent dataAgenda={agenda} agenda={null} />
             </main>
         </>
     );

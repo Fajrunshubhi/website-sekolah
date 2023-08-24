@@ -25,6 +25,7 @@ HeaderSection.propTypes = {
     title1: PropTypes.string,
     total: PropTypes.any,
     lihatsemua: PropTypes.string,
+    to: PropTypes.any,
 };
 
 export default HeaderSection;

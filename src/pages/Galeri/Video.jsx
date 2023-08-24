@@ -1,21 +1,31 @@
-import dataVideo from "../../assets/data/video";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { API_HOST } from "../../utils/API/api";
 
 const Video = () => {
+    const [video, setvideo] = useState([]);
+    useEffect(() => {
+        axios
+            .get(`${API_HOST.url}/video`)
+            .then((response) => {
+                setvideo(response.data.video);
+            })
+            .catch((error) => {
+                console.error("Error fetching video:", error);
+            });
+    }, []);
     return (
         <div className="container">
-            {dataVideo.map((item) => {
+            {video.map((item) => {
                 return (
                     <section
-                        key={item.link}
+                        key={item._id}
                         className="container d-flex justify-content-center"
                         data-aos="fade-up">
-                        <iframe
-                            width="800"
-                            height="500"
-                            src={item.link}
-                            title="YouTube video Profil SD NEGERI 1 BANYUROTO"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen></iframe>
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html: item.link,
+                            }}></div>
                     </section>
                 );
             })}

@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
-// import { AiOutlineArrowRight as Arrow } from "react-icons/ai";
-import dataEkstrakurikuler from "../../assets/data/ekstrakurikuler";
+import dataEkstrakurikuler from "../../assets/data/ekstra";
 import CardEkskul from "../CardEskul";
 import HeaderSection from "../HeaderSection";
 const EkstrakurikulerComponent = ({ eksk }) => {

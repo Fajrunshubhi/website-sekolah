@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import CardBerita from "../CardBerita";
-import dataBerita from "../../assets/data/berita";
 import HeaderSection from "../HeaderSection";
+import format from "date-fns/format/index.js";
+import idLocale from "date-fns/locale/id/index.js";
 
-const BeritaComponent = ({ berita }) => {
+const BeritaComponent = ({ berita, dataBerita }) => {
     const totalBerita = berita;
     return (
         <section id="popular-beritas" className="beritas">
@@ -19,26 +20,45 @@ const BeritaComponent = ({ berita }) => {
                 <div className="row" data-aos="zoom-in" data-aos-delay="100">
                     {totalBerita !== null
                         ? dataBerita.map((item, index) => {
+                              const tgl_pub = format(
+                                  new Date(item.tanggal_publikasi),
+                                  "dd MMMM yyyy, HH:mm",
+                                  {
+                                      locale: idLocale,
+                                  }
+                              );
                               if (index < 3) {
                                   return (
                                       <CardBerita
-                                          key={item.title}
-                                          foto={item.foto}
+                                          key={item._id}
+                                          id={item._id}
+                                          title={item.judul}
                                           jenis={item.jenis}
-                                          title={item.title}
+                                          foto={item.imageUrl}
                                           deskripsi={item.deskripsi}
+                                          tgl_publikasi={tgl_pub}
                                       />
                                   );
                               }
                           })
                         : dataBerita.map((item) => {
+                              const tgl_pub = format(
+                                  new Date(item.tanggal_publikasi),
+                                  "dd MMMM yyyy, HH:mm",
+                                  {
+                                      locale: idLocale,
+                                  }
+                              );
                               return (
                                   <CardBerita
-                                      key={item.title}
-                                      foto={item.foto}
+                                      key={item._id}
+                                      id={item._id}
+                                      title={item.judul}
                                       jenis={item.jenis}
-                                      title={item.title}
+                                      foto={item.imageUrl}
                                       deskripsi={item.deskripsi}
+                                      data={item}
+                                      tgl_publikasi={tgl_pub}
                                   />
                               );
                           })}
@@ -49,6 +69,7 @@ const BeritaComponent = ({ berita }) => {
 };
 BeritaComponent.propTypes = {
     berita: PropTypes.any,
+    dataBerita: PropTypes.array,
 };
 
 export default BeritaComponent;

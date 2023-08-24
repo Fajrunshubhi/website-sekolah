@@ -9,11 +9,10 @@ import Guru from "../pages/Guru";
 import VisiMisi from "../pages/Visimisi";
 import Prestasi from "../pages/Prestasi";
 import Ekstrakurikuler from "../pages/Ekstrakurikuler";
-
-import Foto from "../pages/galeri/Foto";
+import Foto from "../pages/Galeri/Foto";
 import Video from "../pages/Galeri/Video";
-import Tentang from "../pages/Tentang";
 import BeritaDetail from "../pages/BeritaDetail";
+import AgendaDetail from "../pages/AgendaDetail";
 
 const Router = () => {
     const router = createBrowserRouter([
@@ -43,22 +42,21 @@ const Router = () => {
                     path: "ekstrakurikuler",
                     element: <Ekstrakurikuler />,
                 },
-
-                {
-                    path: "tentang",
-                    element: <Tentang />,
-                },
                 {
                     path: "berita-artikel",
                     element: <Berita />,
                 },
                 {
-                    path: "berita/:beritaId",
+                    path: "berita-artikel/:beritaId",
                     element: <BeritaDetail />,
                 },
                 {
                     path: "agenda",
                     element: <Agenda />,
+                },
+                {
+                    path: "agenda/:agendaId",
+                    element: <AgendaDetail />,
                 },
                 {
                     path: "foto",

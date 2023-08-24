@@ -127,7 +127,7 @@ const Navbar = () => {
                                 aria-current="page"
                                 to="/"
                                 end>
-                                Home
+                                Beranda
                             </NavLink>
                         </li>
                         <li
@@ -195,17 +195,6 @@ const Navbar = () => {
                                 </li>
                                 <li>
                                     <hr className="dropdown-divider" />
-                                </li>
-                                <li className={`nav-item`} onClick={navButton}>
-                                    <NavLink
-                                        className={({ isActive }) =>
-                                            isActive ? styles.active : undefined
-                                        }
-                                        aria-current="page"
-                                        to="/sarana-prasarana"
-                                        end>
-                                        Tentang Sekolah
-                                    </NavLink>
                                 </li>
                             </ul>
                         </li>
@@ -286,7 +275,7 @@ const Navbar = () => {
                                 Kontak
                             </NavLink>
                         </li>
-                        <li className={`nav-item`}>
+                        {/* <li className={`nav-item`}>
                             <NavLink
                                 className={({ isActive }) =>
                                     isActive ? styles.active : undefined
@@ -296,7 +285,7 @@ const Navbar = () => {
                                 end>
                                 <span className={styles.btnlogin}>Login</span>
                             </NavLink>
-                        </li>
+                        </li> */}
                     </ul>
 
                     <i

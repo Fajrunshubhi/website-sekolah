@@ -1,13 +1,7 @@
 import PropTypes from "prop-types";
+import { HOST } from "../../utils/API/api";
 
-const DetailBerita = ({
-    foto,
-    judul,
-    jenis,
-    deskripsi,
-    tglposting,
-    tgledit,
-}) => {
+const DetailBerita = ({ foto, judul, jenis, deskripsi, tglposting }) => {
     return (
         <section id="course-details" className="course-details">
             <div className="container" data-aos="fade-up">
@@ -15,7 +9,7 @@ const DetailBerita = ({
                     <div className="col-lg-8">
                         <img
                             width="100%"
-                            src={foto}
+                            src={`${HOST.url}/${foto}`}
                             className="img-fluid"
                             alt="Gambar Berita Detail"
                         />
@@ -38,11 +32,6 @@ const DetailBerita = ({
                             <h5>Jenis (Berita/Artikel)</h5>
                             <p>{jenis}</p>
                         </div>
-
-                        <div className="course-info d-flex justify-content-between align-items-center">
-                            <h5>Tanggal Edit</h5>
-                            <p>{tgledit}</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -55,7 +44,6 @@ DetailBerita.propTypes = {
     jenis: PropTypes.string,
     deskripsi: PropTypes.string,
     tglposting: PropTypes.string,
-    tgledit: PropTypes.string,
 };
 
 export default DetailBerita;

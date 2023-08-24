@@ -1,8 +1,21 @@
-import dataFoto from "../../assets/data/foto";
 import CardFoto from "../../components/CardFoto";
 import HeaderSection from "../../components/HeaderSection";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { API_HOST } from "../../utils/API/api";
 
 const Foto = () => {
+    const [foto, setfoto] = useState([]);
+    useEffect(() => {
+        axios
+            .get(`${API_HOST.url}/foto`)
+            .then((response) => {
+                setfoto(response.data.foto);
+            })
+            .catch((error) => {
+                console.error("Error fetching foto:", error);
+            });
+    }, []);
     return (
         <section id="foto-sekolah" className="foto-sekolah p-0">
             <div className="breadcrumbs mb-4" data-aos="fade-in">
@@ -30,13 +43,13 @@ const Foto = () => {
                 />
 
                 <div className="row" data-aos="zoom-in" data-aos-delay="100">
-                    {dataFoto.map((item) => {
+                    {foto.map((item) => {
                         return (
                             <CardFoto
-                                key={item.title}
-                                foto={item.foto}
-                                title={item.title}
+                                key={item._id}
+                                title={item.judul}
                                 deskripsi={item.deskripsi}
+                                foto={item.imageUrl}
                             />
                         );
                     })}

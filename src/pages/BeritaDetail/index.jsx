@@ -1,6 +1,32 @@
+import { useParams } from "react-router-dom";
 import DetailBerita from "../../components/DetailBerita";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { API_HOST } from "../../utils/API/api";
+import format from "date-fns/format/index.js";
+import idLocale from "date-fns/locale/id/index.js";
 
 const BeritaDetail = () => {
+    const id = useParams().beritaId;
+    const [berita, setberita] = useState([]);
+    useEffect(() => {
+        axios
+            .get(`${API_HOST.url}/berita/${id}`)
+            .then((response) => {
+                response.data.berita.tanggal_publikasi = format(
+                    new Date(response.data.berita.tanggal_publikasi),
+                    "dd MMMM yyyy, HH:mm",
+                    {
+                        locale: idLocale,
+                    }
+                );
+                setberita(response.data.berita);
+            })
+            .catch((error) => {
+                console.error("Error fetching berita:", error);
+            });
+    }, []);
+
     return (
         <>
             <main id="main">
@@ -8,34 +34,26 @@ const BeritaDetail = () => {
                     <div className="container">
                         <h2>Berita & Artikel Detail</h2>
                         <p>
-                            Est dolorum ut non facere possimus quibusdam
-                            eligendi voluptatem. Quia id aut similique quia
-                            voluptas sit quaerat debitis. Rerum omnis ipsam
-                            aperiam consequatur laboriosam nemo harum
-                            praesentium.
+                            Berita dan artikel sekolah adalah sumber informasi
+                            yang penting untuk membagikan informasi terbaru,
+                            kesuksesan siswa, perkembangan pendidikan, dan
+                            banyak lagi kepada komunitas sekolah dan masyarakat.
+                            Ini juga merupakan cara untuk menginspirasi,
+                            memberikan wawasan, dan mendukung pendidikan yang
+                            berkualitas. Dengan berita dan artikel sekolah, kita
+                            dapat terus mengikuti perkembangan positif dan
+                            tantangan dalam dunia pendidikan.
                         </p>
                     </div>
                 </div>
 
                 <DetailBerita
-                    foto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdZuTtjqGPv2TDeOS2E977CDgIoxQ2R5tTpQ&usqp=CAU"
-                    judul="Judul Berita dan Artikel"
-                    jenis="Artikel"
-                    deskripsi="Qui et explicabo voluptatem et ab qui vero et
-                    voluptas. Sint voluptates temporibus quam autem.
-                    Atque nostrum voluptatum laudantium a doloremque
-                    enim et ut dicta. Nostrum ducimus est iure minima
-                    totam doloribus nisi ullam deserunt. Corporis aut
-                    officiis sit nihil est. Labore aut sapiente aperiam.
-                    Qui voluptas qui vero ipsum ea voluptatem. Omnis et
-                    est. Voluptatem officia voluptatem adipisci et iusto
-                    provident doloremque consequatur. Quia et porro est.
-                    Et qui corrupti laudantium ipsa. Eum quasi saepe
-                    aperiam qui delectus quaerat in. Vitae mollitia ipsa
-                    quam. Ipsa aut qui numquam eum iste est dolorum. Rem
-                    voluptas ut sit ut."
-                    tglposting="20 Desember 2023 pukul 20.00"
-                    tgledit="21 Desember 2023 pukul 08.00"
+                    foto={berita.imageUrl}
+                    judul={berita.judul}
+                    deskripsi={berita.deskripsi}
+                    tglposting={berita.tanggal_publikasi}
+                    jadwal={berita.jadwal}
+                    jenis={berita.jenis}
                 />
             </main>
         </>
