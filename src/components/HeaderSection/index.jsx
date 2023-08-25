@@ -1,5 +1,6 @@
 import { AiOutlineArrowRight as Arrow } from "react-icons/ai";
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 
 const HeaderSection = ({ title, title1, total, lihatsemua, to }) => {
     return (
@@ -12,9 +13,9 @@ const HeaderSection = ({ title, title1, total, lihatsemua, to }) => {
             </div>
             {total !== null && (
                 <div className="section-lihat-semua">
-                    <a className="btn-lihat-semua" href={`/${to}`}>
+                    <NavLink className="btn-lihat-semua" to={`/${to}`} end>
                         {lihatsemua} <Arrow />
-                    </a>
+                    </NavLink>
                 </div>
             )}
         </div>

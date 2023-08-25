@@ -9,13 +9,16 @@ const CardAgenda = ({ id, foto, judul, deskripsi, jadwal }) => {
     return (
         <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div className="berita-item mt-4 w-100">
-                <a className="img-card">
+                <NavLink
+                    className="img-card"
+                    to={isNavActive ? `agenda/${id}` : `agenda/${id}`}
+                    end>
                     <img
                         src={`${HOST.url}/${foto}`}
                         className="img-fluid"
                         alt="Gambar Agenda Sekolah"
                     />
-                </a>
+                </NavLink>
                 <div className="berita-content">
                     <div className="d-flex justify-content-between align-items-center mb-3">
                         <h4>Agenda</h4>
