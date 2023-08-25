@@ -8,13 +8,7 @@ const CardBerita = ({ id, foto, jenis, title, deskripsi }) => {
     return (
         <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div className="berita-item mt-4 w-100">
-                <a
-                    className="img-card"
-                    href={
-                        isNavActive
-                            ? `berita-artikel/${id}`
-                            : `berita-artikel/${id}`
-                    }>
+                <a className="img-card">
                     <img
                         src={`${HOST.url}/${foto}`}
                         className="img-fluid"

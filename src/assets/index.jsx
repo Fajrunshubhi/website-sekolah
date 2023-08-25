@@ -3,7 +3,7 @@
 // import "./vendor/aos/aos.css";
 // import "./vendor/bootstrap/css/bootstrap.min.css";
 import "./vendor/bootstrap-icons/bootstrap-icons.css";
-// import "./vendor/boxicons/css/boxicons.min.css";
+import "./vendor/boxicons/css/boxicons.min.css";
 // import "./vendor/remixicon/remixicon.css";
 // import "./vendor/swiper/swiper-bundle.min.css";
 
