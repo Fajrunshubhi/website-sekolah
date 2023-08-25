@@ -1,7 +1,7 @@
 const API_HOST = {
-    url: "http://localhost:8000/api/v1",
+    url: "https://api-website-sekolah-production.up.railway.app/api/v1",
 };
 const HOST = {
-    url: "http://localhost:8000",
+    url: "https://api-website-sekolah-production.up.railway.app",
 };
 export { API_HOST, HOST };
