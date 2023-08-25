@@ -5,7 +5,6 @@ import { HOST } from "../../utils/API/api";
 const CardBerita = ({ id, foto, jenis, title, deskripsi }) => {
     const location = useLocation();
     const isNavActive = location.pathname === `/berita-artikel`;
-    console.log(isNavActive);
     return (
         <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div className="berita-item mt-4 w-100">
