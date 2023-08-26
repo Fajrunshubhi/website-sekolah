@@ -3,8 +3,14 @@ import HeaderSection from "../../components/HeaderSection";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_HOST } from "../../utils/API/api";
+import { useLocation } from "react-router-dom";
 
 const Foto = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     const [foto, setfoto] = useState([]);
     useEffect(() => {
         axios

@@ -2,8 +2,13 @@ import BeritaComponent from "../../components/Berita";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { API_HOST } from "../../utils/API/api";
+import { useLocation } from "react-router-dom";
 
 const Berita = () => {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     const [berita, setberita] = useState([]);
     useEffect(() => {
         axios

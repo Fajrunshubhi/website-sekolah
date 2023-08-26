@@ -1,4 +1,12 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 const Kontak = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     return (
         <>
             <div className="breadcrumbs" data-aos="fade-in">

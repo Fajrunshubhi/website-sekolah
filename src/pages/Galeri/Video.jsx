@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_HOST } from "../../utils/API/api";
+import { useLocation } from "react-router-dom";
 
 const Video = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     const [video, setvideo] = useState([]);
     useEffect(() => {
         axios

@@ -1,5 +1,12 @@
+import { useLocation } from "react-router-dom";
 import VisiMisiComponent from "../../components/VisiMisi";
+import { useEffect } from "react";
 const VisiMisi = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     return (
         <>
             <div className="breadcrumbs" data-aos="fade-in">

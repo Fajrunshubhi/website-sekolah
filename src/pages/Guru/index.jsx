@@ -1,8 +1,15 @@
 // import { trainer1, trainer2, trainer3 } from "../../assets/img";
+import { useLocation } from "react-router-dom";
 import GuruComponent from "../../components/Guru";
 import StaffComponent from "../../components/Staff";
+import { useEffect } from "react";
 
 const Guru = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     return (
         <>
             <main id="main" data-aos="fade-in">

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import DetailBerita from "../../components/DetailBerita";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -7,6 +7,11 @@ import format from "date-fns/format/index.js";
 import idLocale from "date-fns/locale/id/index.js";
 
 const BeritaDetail = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     const id = useParams().beritaId;
     const [berita, setberita] = useState([]);
     useEffect(() => {

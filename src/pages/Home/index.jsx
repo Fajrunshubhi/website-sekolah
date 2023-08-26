@@ -14,12 +14,18 @@ import AgendaComponent from "../../components/Agenda";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { API_HOST } from "../../utils/API/api";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
     const [berita, setBerita] = useState([]);
     const [agenda, setAgenda] = useState([]);
     const [prestasi, setPrestasi] = useState([]);
     const [isReadMore, setIsReadMore] = useState(true);
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     const toggleReadMore = () => {
         setIsReadMore(!isReadMore);
     };

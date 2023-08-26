@@ -2,8 +2,14 @@ import AgendaComponent from "../../components/Agenda";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_HOST } from "../../utils/API/api";
+import { useLocation } from "react-router-dom";
 
 const Agenda = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     const [agenda, setagenda] = useState([]);
     useEffect(() => {
         axios

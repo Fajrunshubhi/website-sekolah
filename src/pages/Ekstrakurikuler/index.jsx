@@ -1,6 +1,13 @@
+import { useLocation } from "react-router-dom";
 import EkstrakurikulerComponent from "../../components/Ekskul";
+import { useEffect } from "react";
 
 const Ekstrakurikuler = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     return (
         <>
             <main id="main" data-aos="fade-in">
