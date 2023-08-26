@@ -11,7 +11,11 @@ const CardAgenda = ({ id, foto, judul, deskripsi, jadwal }) => {
             <div className="berita-item mt-4 w-100">
                 <NavLink
                     className="img-card"
-                    to={isNavActive ? `agenda/${id}` : `agenda/${id}`}
+                    to={
+                        isNavActive
+                            ? `${location.pathname}/${id}`
+                            : `agenda/${id}`
+                    }
                     end>
                     <img
                         src={`${HOST.url}/${foto}`}

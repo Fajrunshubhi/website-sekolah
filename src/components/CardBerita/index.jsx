@@ -12,8 +12,8 @@ const CardBerita = ({ id, foto, jenis, title, deskripsi }) => {
                     className="img-card"
                     to={
                         isNavActive
-                            ? `berita-artikel/${id}`
-                            : `berita-artikel/${id}`
+                            ? `${location.pathname}/${id}`
+                            : `agenda/${id}`
                     }
                     end>
                     <img

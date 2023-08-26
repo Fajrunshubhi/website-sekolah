@@ -10,16 +10,16 @@ const CardGuru = ({ foto, nama, jabatan, deskripsi }) => {
                     <span>{jabatan}</span>
                     <p>{deskripsi}</p>
                     <div className="social">
-                        <a href="">
+                        <a>
                             <i className="bi bi-twitter"></i>
                         </a>
-                        <a href="">
+                        <a>
                             <i className="bi bi-facebook"></i>
                         </a>
-                        <a href="">
+                        <a>
                             <i className="bi bi-instagram"></i>
                         </a>
-                        <a href="">
+                        <a>
                             <i className="bi bi-linkedin"></i>
                         </a>
                     </div>

@@ -3,6 +3,7 @@ import { AiOutlineArrowRight as Arrow } from "react-icons/ai";
 import CardAgenda from "../CardAgenda";
 import format from "date-fns/format/index.js";
 import idLocale from "date-fns/locale/id/index.js";
+import { NavLink } from "react-router-dom";
 
 const AgendaComponent = ({ agenda, dataAgenda }) => {
     const totalAgenda = agenda;
@@ -17,9 +18,12 @@ const AgendaComponent = ({ agenda, dataAgenda }) => {
                     </div>
                     {totalAgenda !== null && (
                         <div className="section-lihat-semua">
-                            <a className="btn-lihat-semua" href="/agenda">
+                            <NavLink
+                                className="btn-lihat-semua"
+                                to="/agenda"
+                                end>
                                 Lihat semua agenda <Arrow />
-                            </a>
+                            </NavLink>
                         </div>
                     )}
                 </div>

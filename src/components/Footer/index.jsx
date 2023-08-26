@@ -36,21 +36,27 @@ const Footer = () => {
                                 <ul>
                                     <li>
                                         <i className="bx bx-chevron-right"></i>
-                                        <a href="/">Beranda</a>
+                                        <NavLink to="/" end>
+                                            Beranda
+                                        </NavLink>
                                     </li>
                                     <li>
                                         <i className="bx bx-chevron-right"></i>
-                                        <a href="/berita-artikel">
+                                        <NavLink to="/berita-artikel" end>
                                             Berita & Artikel
-                                        </a>
+                                        </NavLink>
                                     </li>
                                     <li>
                                         <i className="bx bx-chevron-right"></i>
-                                        <a href="/agenda">Agenda</a>
+                                        <NavLink to="/agenda" end>
+                                            Agenda
+                                        </NavLink>
                                     </li>
                                     <li>
                                         <i className="bx bx-chevron-right"></i>
-                                        <a href="/kontak">Kontak</a>
+                                        <NavLink to="/kontak" end>
+                                            Kontak
+                                        </NavLink>
                                     </li>
                                 </ul>
                             </div>
@@ -59,21 +65,27 @@ const Footer = () => {
                                 <ul>
                                     <li>
                                         <i className="bx bx-chevron-right"></i>
-                                        <a href="/guru">Guru</a>
+                                        <NavLink to="/guru" end>
+                                            Guru
+                                        </NavLink>
                                     </li>
                                     <li>
                                         <i className="bx bx-chevron-right"></i>
-                                        <a href="/visi-misi">Visi Misi</a>
+                                        <NavLink to="/visi-misi" end>
+                                            Visi Misi
+                                        </NavLink>
                                     </li>
                                     <li>
                                         <i className="bx bx-chevron-right"></i>
-                                        <a href="/prestasi">Prestasi</a>
+                                        <NavLink to="/prestasi" end>
+                                            Prestasi
+                                        </NavLink>
                                     </li>
                                     <li>
                                         <i className="bx bx-chevron-right"></i>
-                                        <a href="/ekstrakurikuler">
+                                        <NavLink to="/ekstrakurikuler" end>
                                             Ekstrakurikuler
-                                        </a>
+                                        </NavLink>
                                     </li>
                                 </ul>
                             </div>

@@ -30,7 +30,7 @@ const CardPrestasi = ({ foto, title, deskripsi }) => {
                     <span
                         onClick={toggleReadMore}
                         className="btn fs-5 fw-bold mt-1 mb-1">
-                        {isReadMore ? "Read More" : "Show Less"}
+                        {isReadMore ? "Selengkapnya" : "Sembunyikan"}
                     </span>
                 </div>
             </div>
